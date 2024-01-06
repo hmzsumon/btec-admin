@@ -21,6 +21,14 @@ export const companyApi = apiSlice.injectEndpoints({
 				body: data,
 			}),
 		}),
+
+		// update company ai-robot for claim
+		updateAiRobotForClaim: builder.mutation<any, any>({
+			query: () => ({
+				url: '/admin/company/update-inactive-ai-robots',
+				method: 'PUT',
+			}),
+		}),
 	}),
 });
 
@@ -28,4 +36,5 @@ export const {
 	useGetCompanyQuery,
 	useGetBalanceInfoQuery,
 	useUpdateAiRobotMutation,
+	useUpdateAiRobotForClaimMutation,
 } = companyApi;
